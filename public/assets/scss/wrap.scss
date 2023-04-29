@@ -1,0 +1,49 @@
+$dark: #4E4879;
+$main: #f80038;
+$bronze: #cb8c47;
+$bg: #f4f5f6;
+@mixin transform($translate...) {
+  -webkit-transform: $translate;
+  -moz-transform: $translate;
+  -ms-transform: $translate;
+  -o-transform: $translate;
+  transform: $translate;
+}
+@mixin box-shadow($bshadow...) {
+  -webkit-box-shadow: $bshadow;
+  -moz-box-shadow: $bshadow;
+  -ms-box-shadow: $bshadow;
+  -o-box-shadow: $bshadow;
+  box-shadow: $bshadow;
+}
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+@mixin filter($filter) {
+  -webkit-filter: $filter;
+  -moz-filter: $filter;
+  -ms-filter: $filter;
+  -o-filter: $filter;
+  filter: $filter;
+}
+@mixin gradient($gradient...) {
+  background: -webkit-linear-gradient($gradient);
+  background: -moz-linear-gradient($gradient);
+  background: -ms-linear-gradient($gradient);
+  background: -o-linear-gradient($gradient);
+  background: linear-gradient($gradient);
+}
+@mixin blend($blend-mode) {
+  background-blend-mode: $blend-mode;
+  -o-background-blend-mode: $blend-mode;
+  -ms-background-blend-mode: $blend-mode;
+  -moz-background-blend-mode: $blend-mode;
+  -webkit-background-blend-mode: $blend-mode;
+}
+
+@import "style";
+@import "responsive";
