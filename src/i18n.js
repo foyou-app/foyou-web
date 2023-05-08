@@ -3,6 +3,7 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 import eng from "./lib/languages/en";
 import mng from "./lib/languages/mn";
+import kz from "./lib/languages/kz";
 
 i18n
     .use(LanguageDetector)
@@ -11,11 +12,12 @@ i18n
         // we init with resources
         resources: {
             en: {translations:eng,},
-            mn: {translations:mng,} 
+            mn: {translations:mng,} ,
+            kk: {translations:kz,} 
         },
-        fallbackLng: "mn",
+        fallbackLng: "en",
         debug: false,
-
+        lng:'en',
         // have a common namespace used around the full app
         ns: ["translations"],
         defaultNS: "translations",
@@ -28,3 +30,4 @@ i18n
     });
 
 export default i18n;
+

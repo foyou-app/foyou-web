@@ -101,7 +101,7 @@ main {
   align-items: flex-end;
 }
 .swiperAbsolute .swiper {
-  height: 75%;
+  height: 80% !important;
 }
 .swiperAbsolute .swiper-slide {
   background-color: rgba(255, 255, 255, 0.3);
@@ -121,6 +121,12 @@ main {
   opacity: 0.2;
 }
 
+.swiperAbsolute .swiper .fs-12 p{
+ 
+  margin-top: 0;
+  margin-bottom:0;
+}
+
 @media (max-width: 767.98px) {
   .fs-2 {
     font-size: 1.5rem !important;
@@ -129,7 +135,7 @@ main {
     font-size: 1rem !important;
   }
   .swiperAbsolute {
-    bottom: 20%;
+    bottom: 5%;
   }
   .swiperAbsolute .swiper {
     height: 60%;
@@ -137,7 +143,9 @@ main {
   .swiperAbsolute .swiper .fs-14 {
     font-size: 0.75rem;
   }
-  .swiperAbsolute .swiper .fs-12 {
+  .swiperAbsolute .swiper .fs-12 p{
     font-size: 0.675rem;
+    margin-top: 0;
+    margin-bottom:0;
   }
 }/*# sourceMappingURL=wrap.css.map */

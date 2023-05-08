@@ -1,5 +1,5 @@
-export const API_URL = 'http://localhost:1212/';
-//export const API_URL = 'https://apis.foyou.app/';
+//export const API_URL = 'http://localhost:1212/';
+export const API_URL = 'https://apis.foyou.app/';
 export const timeZoneStr = 'Canada/Central';
 export const formatDateMDY =(date)=> {
     var d = new Date(date),

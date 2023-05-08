@@ -6,15 +6,8 @@ module.exports  = {
     faq: 'Foyo & болон F.A.Q',
     register_please: 'Бүртгэлээ үүсгэ!',
     ads_survey_enter: 'Сурталчилгаа болон Судалгаагаа байршуул',
-    customers: 'Харилцагчид',
-    alert_title_transfer_error: 'Шилжүүлэг хийхэд алдаа гарлаа...',
+    customers: 'Харилцагчид', 
     users_text:'"Foyou" аппаас сурталчилгаа уншиж, судалгаа бөглөснөөр мөнгө олох боломжтой',
-    customers_text:'Хамгийн хүртээмжтэй, хурдан, хямд сурталчилгаа, судалгааны шинэ орон зай',
-    contact_us_title:'Холбоо барих', 
-    contact_email_address:'И-майл хаяг',
-    contact_phone_address:'Утасны дугаар',
-    contact_name:'Нэр',
-    contact_title:'Гарчиг',
-    contact_message:'Агуулга',
-    send:'Илгээх', 
+    customers_text:'Хамгийн хүртээмжтэй, хурдан, хямд сурталчилгаа, судалгааны шинэ орон зай', 
+    publish_survey:'Зар сурталчилгаа, судалгаагаа нийтлээрэй'
     }

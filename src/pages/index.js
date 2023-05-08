@@ -47,9 +47,6 @@ const Home = () => {
   }, [lets])
 
     
-    if(!data)
-      return 'loading';
-
     return (<>
     <Header />
     <main className="">
@@ -68,8 +65,8 @@ const Home = () => {
                         <img src="assets/images/demo/5.jpg" alt="" className="ratio-11 w-48 h-48 rounded-5 ms-n-8 border-custom" />
                       </div>
                       <div className="d-flex flex-column">
-                        <strong className="fs-6">+{data.users.count} хэрэглэгч</strong>
-                        <span className="fs-12">Create your account</span>
+                        <strong className="fs-6">+{data?.users.count} { t('Users')}</strong>
+                        <span className="fs-12">{t('register_please')}</span>
                       </div>
                     </div>
                   </div>
@@ -85,8 +82,8 @@ const Home = () => {
                         <img src="assets/images/demo/5.jpg" alt="" className="ratio-11 w-48 h-48 rounded-2 ms-n-8 border-custom" />
                       </div>
                       <div className="d-flex flex-column">
-                        <strong className="fs-6">+{data.pages.count} харилцагч</strong>
-                        <span className="fs-12">Publish your ad & survey</span>
+                        <strong className="fs-6">+{data?.pages.count} { t('customers')}</strong>
+                        <span className="fs-12"> { t('publish_survey')}</span>
                       </div>
                     </div>
                   </div>
@@ -140,16 +137,17 @@ const Home = () => {
     return  <SwiperSlide>  <div class="swiper-slide">
     <div className="d-flex gap-2 p-2 w-100">
                         <img src="assets/images/favicon.svg" alt="" />
-                        <div className="d-flex flex-column w-100">
+                        <div className="d-flex flex-column w-100" >
                           <div className="d-flex align-items-baseline flex-fill justify-content-between mb-1 w-100 fs-14">
                             <strong>{num.title}</strong>
                             <small>now</small>
                           </div>
-                          <span className="fs-12 d-block me-1">{num.content}</span>
+                          <span className="fs-12 d-block me-1"><div dangerouslySetInnerHTML={{__html:num.content}} className="fs-12 d-block me-1" ></div></span>
                         </div>
                       </div></div>
     </SwiperSlide>;
 })}
+  
         
       </Swiper></div> </div>
                  
