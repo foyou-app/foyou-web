@@ -1,18 +1,15 @@
- 
-export const PROFILE_KEY = "profile";
-export const ID_TOKEN_KEY = "token";
+export const PROFILE_KEY = 'profile';
+export const ID_TOKEN_KEY = 'token';
 
 export default class LocalSession {
   static isLogginIn() {
     const token = this.getIdToken();
-    console.log(!!token+'-')
     return !!token;
   }
-  
+
   static logout() {
-    
     localStorage.removeItem(PROFILE_KEY);
-    localStorage.removeItem(ID_TOKEN_KEY); 
+    localStorage.removeItem(ID_TOKEN_KEY);
   }
 
   static getProfile() {
@@ -32,7 +29,6 @@ export default class LocalSession {
     return hereglegch_id;
   }
   static get_token() {
-   // console.log(localStorage.getItem(ID_TOKEN_KEY))
     return localStorage.getItem(ID_TOKEN_KEY) || false;
   }
   static setIdToken(idToken) {
