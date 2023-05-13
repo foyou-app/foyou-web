@@ -21,12 +21,6 @@ const Language = () => {
     dispatch(web_pages({ lang: lng.toUpperCase() }));
   };
 
-  // useEffect(() => {
-  //   dispatch(web_pages({ lang: selected.toUpperCase() }))
-  //     .then(res => {})
-  //     .catch(error => {});
-  // }, []);
-
   useEffect(() => {
     changeLanguage(queryParams.get('lang') || 'en');
   }, [queryParams.get('lang')]);
@@ -34,6 +28,21 @@ const Language = () => {
   const changeLangQuery = lang => {
     queryParams.set('lang', lang);
     window.location.search = queryParams.toString();
+  };
+
+  const getLangName = () => {
+    switch (selected) {
+      case 'en':
+        return 'English';
+      case 'mn':
+        return 'Монгол';
+      case 'kk':
+        return 'Kazakh';
+      case 'ru':
+        return 'Русский язык';
+      default:
+        return 'English';
+    }
   };
 
   return (
@@ -45,7 +54,7 @@ const Language = () => {
         aria-expanded="false"
       >
         <img style={{ width: 40, height: 20 }} src={sel_flag} alt="" />
-        <span>{selected === 'en' ? 'English' : selected === 'mn' ? 'Монгол' : 'Kazakh'}</span>
+        <span>{getLangName()}</span>
       </button>
       <ul class="dropdown-menu border-0 shadow p-2 dropdown-menu-end">
         <li>
@@ -54,7 +63,7 @@ const Language = () => {
             onClick={() => changeLangQuery('en')}
             class="dropdown-item fs-14 d-flex align-items-center gap-2 p-2 rounded-1"
           >
-            <img src="assets/images/en.svg" alt="" />
+            <img src="assets/images/en.svg" alt="en" />
             <span>English</span>
           </button>
         </li>
@@ -64,7 +73,7 @@ const Language = () => {
             onClick={() => changeLangQuery('mn')}
             class="dropdown-item fs-14 d-flex align-items-center gap-2 p-2 rounded-1"
           >
-            <img src="assets/images/mn.svg" alt="" />
+            <img src="assets/images/mn.svg" alt="mn" />
             <span>Монгол</span>
           </button>
         </li>
@@ -74,8 +83,18 @@ const Language = () => {
             onClick={() => changeLangQuery('kk')}
             class="dropdown-item fs-14 d-flex align-items-center gap-2 p-2 rounded-1"
           >
-            <img src="assets/images/kk.svg" style={{ width: 40, height: 20 }} alt="" />
+            <img src="assets/images/kk.svg" style={{ width: 40, height: 20 }} alt="kk" />
             <span>Kazakh</span>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            onClick={() => changeLangQuery('ru')}
+            class="dropdown-item fs-14 d-flex align-items-center gap-2 p-2 rounded-1"
+          >
+            <img src="assets/images/ru.svg" style={{ width: 40, height: 20 }} alt="ru" />
+            <span>Русский язык</span>
           </button>
         </li>
       </ul>
