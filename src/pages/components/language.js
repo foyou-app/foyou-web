@@ -1,14 +1,16 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 
 import { useDispatch } from 'react-redux';
 import { web_pages } from '../../lib/store/actions/actions';
 
 const Language = () => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
   const dispatch = useDispatch();
   const { i18n } = useTranslation();
   const [selected, setSelected] = useState('en');
-  const [selectedlang_text, setselectedlang_text] = useState('');
   const [sel_flag, setsel_flag] = useState('assets/images/en.svg');
 
   const changeLanguage = lng => {
@@ -16,16 +18,23 @@ const Language = () => {
     setSelected(lng);
     setsel_flag('assets/images/' + lng + '.svg');
 
-    dispatch(web_pages({ lang: lng.toUpperCase() }))
-      .then(res => {})
-      .catch(error => {});
+    dispatch(web_pages({ lang: lng.toUpperCase() }));
   };
 
+  // useEffect(() => {
+  //   dispatch(web_pages({ lang: selected.toUpperCase() }))
+  //     .then(res => {})
+  //     .catch(error => {});
+  // }, []);
+
   useEffect(() => {
-    dispatch(web_pages({ lang: selected.toUpperCase() }))
-      .then(res => {})
-      .catch(error => {});
-  }, []);
+    changeLanguage(queryParams.get('lang') || 'en');
+  }, [queryParams.get('lang')]);
+
+  const changeLangQuery = lang => {
+    queryParams.set('lang', lang);
+    window.location.search = queryParams.toString();
+  };
 
   return (
     <Fragment>
@@ -42,7 +51,7 @@ const Language = () => {
         <li>
           <button
             type="button"
-            onClick={() => changeLanguage('en')}
+            onClick={() => changeLangQuery('en')}
             class="dropdown-item fs-14 d-flex align-items-center gap-2 p-2 rounded-1"
           >
             <img src="assets/images/en.svg" alt="" />
@@ -52,7 +61,7 @@ const Language = () => {
         <li>
           <button
             type="button"
-            onClick={() => changeLanguage('mn')}
+            onClick={() => changeLangQuery('mn')}
             class="dropdown-item fs-14 d-flex align-items-center gap-2 p-2 rounded-1"
           >
             <img src="assets/images/mn.svg" alt="" />
@@ -62,7 +71,7 @@ const Language = () => {
         <li>
           <button
             type="button"
-            onClick={() => changeLanguage('kk')}
+            onClick={() => changeLangQuery('kk')}
             class="dropdown-item fs-14 d-flex align-items-center gap-2 p-2 rounded-1"
           >
             <img src="assets/images/kk.svg" style={{ width: 40, height: 20 }} alt="" />
