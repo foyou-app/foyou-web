@@ -4,6 +4,7 @@ import { initReactI18next } from "react-i18next";
 import eng from "./lib/languages/en";
 import mng from "./lib/languages/mn";
 import kz from "./lib/languages/kz";
+import ru from "./lib/languages/ru";
 
 i18n
     .use(LanguageDetector)
@@ -13,7 +14,8 @@ i18n
         resources: {
             en: {translations:eng,},
             mn: {translations:mng,} ,
-            kk: {translations:kz,} 
+            kk: {translations:kz,} ,
+            ru: {translations:ru,} 
         },
         fallbackLng: "en",
         debug: false,
