@@ -15,13 +15,13 @@ function Footer() {
       {' '}
       <footer className='d-flex align-items-center justify-content-lg-between pt-3 pb-4 flex-wrap justify-content-center gap-3 overflow-hidden position-relative zindex-1'>
         <div className='d-flex align-items-center animate__animated animate__fadeInUp animate__delay-1s'>
-          <button onClick={() => navigate(`/terms-of-condition?lang=${currentLang}`)} type='button' className='btn'>
+          <a href='https://www.4uuuu.app//terms-of-condition' className='btn'>
             <span>{t('terms_condition')}</span>
-          </button>
+          </a>
           •
-          <button onClick={() => navigate(`/privacy-policy?lang=${currentLang}`)} type='button' className='btn'>
+          <a href='https://www.4uuuu.app/privacy-policy' className='btn'>
             <span>{t('privacy_policy')}</span>
-          </button>
+          </a>
         </div>
         <div className='d-flex align-items-center flex-wrap justify-content-center animate__animated animate__fadeInUp animate__delay-1s'>
           <div className='d-flex'>
