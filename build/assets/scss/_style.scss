@@ -1,0 +1,100 @@
+body {
+  font-family: 'Manrope', sans-serif;
+  min-height: 100vh;
+  @include gradient(135deg, white, rgba(black, 0.1));
+  font-size: 0.875rem;
+  color: $dark;
+  position: relative;
+}
+header {
+  position: relative;
+  z-index: 10;
+}
+main {
+  position: relative;
+  z-index: 1;
+  min-height: 60vh;
+}
+.btn {
+  font-size: 0.875rem;
+
+  &.btn-dark {
+    background-color: $dark;
+  }
+}
+.fs-12 {
+  font-size: 0.75rem;
+}
+.fs-14 {
+  font-size: 0.875rem;
+}
+.w-48 {
+  width: 3rem;
+}
+.maxw-100 {
+  max-width: 100%;
+}
+.maxh-100 {
+  max-height: 100%;
+}
+.h-48 {
+  height: 3rem;
+}
+.ratio-11 {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center center;
+}
+.ratio-21 {
+  aspect-ratio: 2/1;
+  object-fit: contain;
+  object-position: center center;
+}
+.ms-n-8 {
+  margin-left: -0.5rem;
+}
+.border-custom {
+  border: 2px solid $dark;
+  @include box-shadow(0 0.5rem 1rem rgba($dark, 0.3));
+}
+.zindex-0 {
+  z-index: 0;
+}
+.zindex-1 {
+  z-index: 1;
+}
+.phone {
+  aspect-ratio: 1/2;
+  height: 50rem;
+}
+.swiperAbsolute {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  bottom: 15%;
+  height: 70%;
+  width: 100%;
+  padding: 0 2rem;
+  display: flex;
+  align-items: flex-end;
+
+  .swiper {
+    height: 75%;
+  }
+  .swiper-slide {
+    background-color: rgba(white, 0.7);
+    backdrop-filter: blur(0.5rem);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    @include transition(0.2s ease);
+
+    &.swiper-slide-prev {
+      @include transform(scale(0.1));
+      opacity: 0;
+    }
+  }
+}
+.bgImage {
+  opacity: 0.2;
+}
