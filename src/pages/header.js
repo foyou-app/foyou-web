@@ -11,7 +11,7 @@ function Header() {
     <header class=''>
       <nav class='pt-4 pb-3 d-flex align-items-center justify-content-between'>
         <Link to={`/?lang=${currentLang}`} class='logo'>
-          <img src='assets/images/logo.png' height={40} alt='' class='animate__animated animate__fadeInDown' />
+          <img src='assets/images/foyou-logo.svg' height={40} alt='' class='animate__animated animate__fadeInDown' />
         </Link>
       </nav>
     </header>

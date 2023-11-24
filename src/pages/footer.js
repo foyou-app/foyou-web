@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useCurrentLang from './hooks/useCurrentLang';
 
 function Footer() {
@@ -15,13 +15,13 @@ function Footer() {
       {' '}
       <footer className='d-flex align-items-center justify-content-lg-between pt-3 pb-4 flex-wrap justify-content-center gap-3 overflow-hidden position-relative zindex-1'>
         <div className='d-flex align-items-center animate__animated animate__fadeInUp animate__delay-1s'>
-          <a href='https://www.4uuuu.app//terms-of-condition' className='btn'>
+          <Link to='/terms-of-condition' className='btn'>
             <span>{t('terms_condition')}</span>
-          </a>
+          </Link>
           •
-          <a href='https://www.4uuuu.app/privacy-policy' className='btn'>
+          <Link to='/privacy-policy' className='btn'>
             <span>{t('privacy_policy')}</span>
-          </a>
+          </Link>
         </div>
         <div className='d-flex align-items-center flex-wrap justify-content-center animate__animated animate__fadeInUp animate__delay-1s'>
           <div className='d-flex'>
@@ -38,7 +38,7 @@ function Footer() {
           </div>
           <div className='d-flex align-items-center'>
             <a href='mailto:info@4uuuu.app' className='btn'>
-              <span>info@4uuuu.app</span>
+              <span>info@foyou.app</span>
             </a>
           </div>
         </div>
