@@ -15,11 +15,11 @@ function Footer() {
       {' '}
       <footer className='d-flex align-items-center justify-content-lg-between pt-3 pb-4 flex-wrap justify-content-center gap-3 overflow-hidden position-relative zindex-1'>
         <div className='d-flex align-items-center animate__animated animate__fadeInUp animate__delay-1s'>
-          <Link to='/terms-of-condition' className='btn'>
+          <Link to={`/terms-of-condition?lang=${currentLang}`} className='btn'>
             <span>{t('terms_condition')}</span>
           </Link>
           •
-          <Link to='/privacy-policy' className='btn'>
+          <Link to={`/privacy-policy?lang=${currentLang}`} className='btn'>
             <span>{t('privacy_policy')}</span>
           </Link>
         </div>

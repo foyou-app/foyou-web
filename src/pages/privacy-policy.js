@@ -3,13 +3,21 @@ import { useDispatch, useSelector } from 'react-redux';
 import { web_pages } from '../lib/store/actions/actions';
 import Header from './header';
 import Footer from './footer';
+import { useSearchParams } from 'react-router-dom';
 
 export default function TermsOfCondition() {
   const lets = useSelector((state) => state.mainReducer);
   const [data, setdata] = useState(null);
   const dispatch = useDispatch();
+  const [searchParams] = useSearchParams();
 
-  const [policy, setPolicy] = useState({ id: 2, title: '', content: '', type: 'terms', lang: 'mn' });
+  const [policy, setPolicy] = useState({
+    id: 2,
+    title: '',
+    content: '',
+    type: 'terms',
+    lang: searchParams.get('lang') || 'en',
+  });
 
   useEffect(() => {
     if (lets.pages != null) {
@@ -18,7 +26,7 @@ export default function TermsOfCondition() {
   }, [lets]);
 
   useEffect(() => {
-    dispatch(web_pages({ lang: 'mn' }));
+    dispatch(web_pages({ lang: searchParams.get('lang') || 'mn' }));
   }, []);
 
   return (

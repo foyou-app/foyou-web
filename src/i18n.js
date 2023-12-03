@@ -18,8 +18,8 @@ i18n
       ru: { translations: ru },
     },
     fallbackLng: 'mn',
-    debug: false,
     lng: 'mn',
+    debug: false,
     // have a common namespace used around the full app
     ns: ['translations'],
     defaultNS: 'translations',
