@@ -25,7 +25,7 @@ function Footer() {
         </div>
         <div className='d-flex align-items-center flex-wrap justify-content-center animate__animated animate__fadeInUp animate__delay-1s'>
           <div className='d-flex'>
-            <a target='_blank' rel='noreferrer' href='https://www.facebook.com/Foyouapp' className='btn'>
+            <a target='_blank' rel='noreferrer' href='https://www.facebook.com/FoyouGlobal' className='btn'>
               <img src='assets/images/facebook.svg' alt='' />
             </a>
             <a target='_blank' rel='noreferrer' href='https://www.instagram.com/foyou_global/' className='btn'>
